@@ -30,13 +30,14 @@ data.Controller.K = acker(data.Controller.A, data.Controller.B,poles);
 data.Controller.N = -1/(data.Controller.C*inv(data.Controller.A-data.Controller.B*data.Controller.K)*data.Controller.B);
 
 
-%% Sensor input data
-v_out = [2.7,3,3.3,3.7,4];
-data.Sensor.v = [0.14,0.19,0.4,0.56,0.8]; % measured steady-state output voltage in V
-data.Sensor.h = [14,31,50,79,94]; % measured steady-state height in mm
+%% Height sensor input
+data.Pump.v = [2.7, 3, 3.3, 3.7, 4]; % Pump voltage for measurement
+data.Sensor.v = [0.14, 0.19, 0.4, 0.56, 0.8]; % measured steady-state output voltage in V
+data.Sensor.h = [14, 31, 50, 79, 94]; % measured steady-state height in mm
 
-%% Fit
-data.Sensor.FitPara = polyfit(data.Sensor.v, data.Sensor.h, 1)
+
+%% Fit Sensor data
+data.Sensor.FitPara = polyfit(data.Sensor.v, data.Sensor.h, 1);
 
 figure('Name', 'Waterlevel Sensor', 'NumberTitle', 'off');
 % raw data
@@ -52,4 +53,15 @@ h_ylabel = ylabel({'$h$\,/\,mm'});
 set(h_ylabel,'Interpreter','latex')
 legend({'Raw Data','Data fitted'},'Location','southeast')
 
+
 %% System Identification
+
+
+
+
+
+
+
+
+
+
