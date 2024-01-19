@@ -12,6 +12,8 @@ data.zeta       = 0.05;
 data.g          = 9.81; % m/s²
 data.initHeight = 0.1;  % cm
 data.a          = sqrt(2*data.g/(1+data.zeta))*data.Aout/data.At;
+data.pumpMin    = 0; % V
+data.pumpMax    = 5; % V
 
 
 %% Control paramters (fixed-point and trajectory)
