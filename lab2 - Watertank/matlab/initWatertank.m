@@ -36,7 +36,7 @@ data.Sensor.v = [0.14,0.19,0.4,0.56,0.8]; % measured steady-state output voltage
 data.Sensor.h = [14,31,50,79,94]; % measured steady-state height in mm
 
 %% Fit
-data.Sensor.FitPara = polyfit(data.Sensor.v, data.Sensor.h,1)
+data.Sensor.FitPara = polyfit(data.Sensor.v, data.Sensor.h, 1)
 
 figure('Name', 'Waterlevel Sensor', 'NumberTitle', 'off');
 % raw data
@@ -44,7 +44,7 @@ plot(data.Sensor.v, data.Sensor.h, 'r')
 grid on
 hold on
 % Data fitted
-plot(data.Sensor.v, data.Sensor.FitPara(1)*data.Sensor.v+data.Sensor.FitPara(2), 'b')
+plot(data.Sensor.v, data.Sensor.FitPara(1)*data.Sensor.v + data.Sensor.FitPara(2), 'b')
 hold on
 h_xlabel = xlabel({'$U$\,/\,V'});
 set(h_xlabel,'Interpreter','latex')
