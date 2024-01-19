@@ -30,6 +30,13 @@ data.Controller.K = acker(data.Controller.A, data.Controller.B,poles);
 data.Controller.N = -1/(data.Controller.C*inv(data.Controller.A-data.Controller.B*data.Controller.K)*data.Controller.B);
 
 
+%% Trajectory parameters
+% 5th-oder polynom - according to example 5.16 control engineering reader
+data.traj.y1 = 0.0; % Initial height
+data.traj.y2= 0.1; % End height
+data.traj.T = 40; % Time till end height
+
+
 %% Height sensor input
 data.Pump.v = [2.7, 3, 3.3, 3.7, 4]; % Pump voltage for measurement
 data.Sensor.v = [0.14, 0.19, 0.4, 0.56, 0.8]; % measured steady-state output voltage in V
