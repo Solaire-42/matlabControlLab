@@ -14,6 +14,7 @@ data.initHeight = 0.1;  % cm
 data.a          = sqrt(2*data.g/(1+data.zeta))*data.Aout/data.At;
 data.pumpMin    = 0; % V
 data.pumpMax    = 5; % V
+data.Sensor.Offset =2.1; % V
 
 
 %% Control paramters (fixed-point and trajectory)
@@ -37,6 +38,11 @@ data.Controller.N = -1/(data.Controller.C*inv(data.Controller.A-data.Controller.
 data.traj.y1 = 0.0; % Initial height
 data.traj.y2= 0.1; % End height
 data.traj.T = 40; % Time till end height
+
+%% Step
+data.step.y1 =0.0;
+data.step.y2 =0.7;
+data.step.T=6;
 
 
 %% Height sensor input
