@@ -117,9 +117,9 @@ data.pp.ss.p2 = -data.pp.ss.zeta*data.pp.ss.w_n + 1i * data.pp.ss.w_n*sqrt(1-dat
 data.pp.ss.p3 = -data.pp.ss.zeta*data.pp.ss.w_n - 1i * data.pp.ss.w_n*sqrt(1-data.pp.ss.zeta^2);
 
 % add 3th pole which is nondominant ==> so more left
-data.pp.ss.p1 = real(data.pp.ss.p2) * 2;
+data.pp.ss.p1 = real(p2) * 2;
 
-data.pp.ss.pl = [data.pp.ss.p1;data.pp.ss.p2;data.pp.ss.p3]
+data.pp.ss.pl = [p1;p2;p3]
 
 % calculate new matrices: 
 % no error according due to step input see script ex. 3.4
@@ -131,16 +131,16 @@ A_strich = [0,-C;
 B_strich = [0;B];
 
 % poleplacement: 
-data.pp.ss.K = place(A_strich,B_strich,data.pp.ss.pl);
+K = place(A_strich,B_strich,data.pp.ss.pl);
 
-data.pp.ss.Ki = data.pp.ss.K(1);
-data.pp.ss.Kp = data.pp.ss.K(2:end);
+K_i = K(1);
+K_p = K(2:end);
 
 %% Pole placement for obeserver gain
 data.pp.ss.os = [-5; -6];
 % poleplacement
-data.pp.ss.L = place(A',C',data.pp.ss.os);
-data.pp.ss.L = data.pp.ss.L';
+L = place(A',C',data.pp.ss.os);
+L = L';
 
 
 
