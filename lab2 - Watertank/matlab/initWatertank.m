@@ -29,7 +29,7 @@ poles = [complex(-0.2,0),complex(-0.2,0)];
 % We can use Ackerman, because system is stable (rank(ctrb(c.A,c.B)) == size(c.A,1))
 data.Controller.K = acker(data.Controller.A, data.Controller.B,poles);
 
-% calculate prefilter necessary for fixed point control
+% Calculate prefilter necessary for fixed point control
 data.Controller.N = -1/(data.Controller.C*inv(data.Controller.A-data.Controller.B*data.Controller.K)*data.Controller.B);
 
 
@@ -67,16 +67,3 @@ set(h_xlabel,'Interpreter','latex')
 h_ylabel = ylabel({'$h$\,/\,mm'});
 set(h_ylabel,'Interpreter','latex')
 legend({'Raw Data','Data fitted'},'Location','southeast')
-
-
-%% System Identification
-
-
-
-
-
-
-
-
-
-
