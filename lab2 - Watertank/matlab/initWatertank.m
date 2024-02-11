@@ -35,8 +35,8 @@ data.Controller.N = -1/(data.Controller.C*inv(data.Controller.A-data.Controller.
 
 %% Trajectory parameters
 % 5th-oder polynom - according to example 5.16 control engineering reader
-data.traj.y1 = 0.0; % Initial height
-data.traj.y2= 0.1; % End height
+data.traj.y1 = 0.1; % Initial height
+data.traj.y2= 0.2; % End height
 data.traj.T = 40; % Time till end height
 
 %% Step
