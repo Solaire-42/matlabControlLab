@@ -39,6 +39,7 @@ data.traj.y1 = 0.1; % Initial height
 data.traj.y2= 0.2; % End height
 data.traj.T = 40; % Time till end height
 
+
 %% Step
 data.step.y1 =0.0;
 data.step.y2 =0.7;
@@ -50,20 +51,3 @@ data.Pump.v = [2.7, 3, 3.3, 3.7, 4]; % Pump voltage for measurement
 data.Sensor.v = [0.14, 0.19, 0.4, 0.56, 0.8]; % measured steady-state output voltage in V
 data.Sensor.h = [14, 31, 50, 79, 94]; % measured steady-state height in mm
 
-
-%% Fit Sensor data
-data.Sensor.FitPara = polyfit(data.Sensor.v, data.Sensor.h, 1);
-
-figure('Name', 'Waterlevel Sensor', 'NumberTitle', 'off');
-% raw data
-plot(data.Sensor.v, data.Sensor.h, 'r')
-grid on
-hold on
-% Data fitted
-plot(data.Sensor.v, data.Sensor.FitPara(1)*data.Sensor.v + data.Sensor.FitPara(2), 'b')
-hold on
-h_xlabel = xlabel({'$U$\,/\,V'});
-set(h_xlabel,'Interpreter','latex')
-h_ylabel = ylabel({'$h$\,/\,mm'});
-set(h_ylabel,'Interpreter','latex')
-legend({'Raw Data','Data fitted'},'Location','southeast')
