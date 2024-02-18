@@ -4,11 +4,11 @@ close all
 clc
 
 %% Daten
-
-data.ist.t = importdata('meassure.mat').v_sensor.time;
-data.ist.y = importdata('meassure.mat').v_sensor.data;
-data.step.t = importdata('meassure.mat').v_fan.time;
-data.step.y = importdata('meassure.mat').v_fan.data;
+measure = importdata('measure.mat');
+data.ist.t = measure.v_sensor.time;
+data.ist.y = measure.v_sensor.data;
+data.step.t = measure.v_fan.time;
+data.step.y = measure.v_fan.data;
 
 % % Plot
 % figure('Name', 'Raw Data', 'NumberTitle', 'off');
